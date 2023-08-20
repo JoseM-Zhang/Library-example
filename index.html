@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Library Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="add-btn" type="button">NEW BOOK</button>
+
+    <div id="modalForm" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form id="bookForm">
+                <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title"><br>
+                <label for="author">Author:</label><br>
+                <input type="text" id="author" name="author"><br>
+                <label for="pages">Pages:</label><br>
+                <input type="number" id="pages" name="pages"><br>
+                <label for="readStatus">Read?</label>
+                <input type="checkbox" name="readStatus" id="readStatus" value="true">
+                <button type="button" onclick="addBookToLibrary()">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="books-array">
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
