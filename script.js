@@ -1,6 +1,6 @@
 const myLibrary = [];
 myLibrary[0] = new Book('Harry Potter', 'J.K. Rowling', 231, true);
-
+render();
 
 function Book(title, author, pages, readStatus) {
   this.title = title;
