@@ -1,3 +1,96 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background: #ffffff;
+}
+
+.header {
+  padding: 30px;
+
+  background: #272343;  
+
+}
+
+#add-btn {
+  box-shadow:inset 0px 0px 15px 3px #23395e;
+	background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+	background-color:#2e466e;
+	border-radius:20px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:10px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+
+#add-btn:hover {
+	background:linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+	background-color:#415989;
+}
+#add-btn:active {
+	position:relative;
+	top:1px;
+}
+
+
+#books-array {
+  display: grid;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  grid-template-columns: repeat(auto-fill, 20%);
+  gap: 8px;
+  padding: 20px;
+}
+
+#books-array > div {
+  display: grid; 
+  grid-auto-columns: 1fr; 
+  grid-template-columns: 1.8fr 0.2fr; 
+  grid-template-rows: 1fr 1fr 1fr 1fr; 
+  gap: 0px 0px; 
+  justify-items: stretch; 
+  align-items: stretch; 
+  background: #bae8e8;
+  border-radius: 20px;
+  border: 3px solid #000000;
+  text-align: center;
+  padding: 10px;
+}
+
+.title { grid-area: 1 / 1 / 2 / 2; }
+.span { grid-area: 1 / 2 / 2 / 3; }
+.author { grid-area: 2 / 1 / 3 / 2; }
+.pages { grid-area: 3 / 1 / 4 / 2; }
+.read-btn { grid-area: 4 / 2 / 5 / 3; }
+.read-status { grid-area: 4 / 1 / 5 / 2; }
+
+#read-btn {
+	background-color:#2dabf9;
+	border-radius:28px;
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:15px 20px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+}
+#read-btn:hover {
+	background-color:#0688fa;
+}
+#read-btn:active {
+	position:relative;
+	top:1px;
+}
+
+
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -23,7 +116,7 @@
   }
   
   /* The Close Button */
-  .close {
+  .close, .remove-span {
     color: #aaaaaa;
     float: right;
     font-size: 28px;
@@ -31,7 +124,9 @@
   }
   
   .close:hover,
-  .close:focus {
+  .close:focus,
+  .remove-span:hover,
+  .remove-span:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;

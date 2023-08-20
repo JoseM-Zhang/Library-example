@@ -49,16 +49,16 @@ function render() {
     let book = myLibrary[i];
     let bookEl = document.createElement("div");
     bookEl.innerHTML = `
-      <div class="card-header">
+
+        <span class="remove-span" onclick="removeBookById(${book.id})">&times;</span>
         <h3 class="title">${book.title}</h3>
         <h5 class="author">${book.author}</h5>
-      </div>
-      <div class="card-body">
-        <p>${book.pages} pages</p>
+
+
+        <p class="pages">${book.pages} pages</p>
         <p class="read-status">${book.readStatus ? "Read" : "Not Read"}</p>
         <button id="read-btn" onclick="modifyReadStatus(${book.id})" type="button">Read Toggle</button>
-        <button id="remove-btn" onclick="removeBookById(${book.id})" type="button">Remove Book</button>
-      </div>
+
     `;
     libraryEl.appendChild(bookEl);
   }
