@@ -89,7 +89,9 @@ body {
 	top:1px;
 }
 
-
+input:invalid {
+  border: 2px dashed red;
+}
 
 /* The Modal (background) */
 .modal {

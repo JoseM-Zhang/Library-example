@@ -15,6 +15,7 @@ function Book(title, author, pages, readStatus) {
 var modal = document.getElementById("modalForm");
 var btn = document.getElementById("add-btn");
 var span = document.getElementsByClassName('close')[0];
+var submitBtn = document.getElementById("submit-btn");
 
 btn.onclick = function() {
   modal.style.display = "block";
@@ -37,9 +38,14 @@ function addBookToLibrary () {
   let author = document.getElementById("author").value;
   let pages = document.getElementById("pages").value;
   let readStatus = document.getElementById("readStatus").checked;
-  myLibrary.push(new Book(title, author, pages, readStatus));
-  document.getElementById("bookForm").reset();
-  render();
+  if(!title || !author || !pages){
+    alert("Fill all the required boxes.");
+  }
+  else{
+    myLibrary.push(new Book(title, author, pages, readStatus));
+    document.getElementById("bookForm").reset();
+    render();
+  }
 }
 
 function render() {
