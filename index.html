@@ -16,15 +16,15 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <form id="bookForm">
-                <label for="title">Title:</label><br>
-                <input type="text" id="title" name="title"><br>
-                <label for="author">Author:</label><br>
-                <input type="text" id="author" name="author"><br>
-                <label for="pages">Pages:</label><br>
-                <input type="number" id="pages" name="pages"><br>
                 <label for="readStatus">Read?</label>
-                <input type="checkbox" name="readStatus" id="readStatus" value="true">
-                <button type="button" onclick="addBookToLibrary()">Submit</button>
+                <input type="checkbox" name="readStatus" id="readStatus" value="true"><br>
+                <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title" required><br>
+                <label for="author">Author:</label><br>
+                <input type="text" id="author" name="author" required><br>
+                <label for="pages">Pages:</label><br>
+                <input type="number" id="pages" name="pages" onkeypress="return /[0-9]/i.test(event.key)" required><br>
+                <button type="button" id="submit-btn" onclick="addBookToLibrary()">Submit</button>
             </form>
         </div>
     </div>
